@@ -7,8 +7,8 @@ namespace TheGildedOnes.Items.Accessories
 	public class RuneOfWrath : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Rune Of Rejuvenation");
-			Tooltip.SetDefault("Doubles your maximum HP");
+			DisplayName.SetDefault("Rune Of Wrath");
+			Tooltip.SetDefault("Grants +8% more damage and all attacks burn enemies");
 		}
 
 		public override void SetDefaults() {

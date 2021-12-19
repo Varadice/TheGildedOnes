@@ -7,8 +7,8 @@ namespace TheGildedOnes.Items.Accessories
 	public class RuneOfDexterity : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Rune Of Rejuvenation");
-			Tooltip.SetDefault("Doubles your maximum HP");
+			DisplayName.SetDefault("Rune Of Dexterity");
+			Tooltip.SetDefault("Grants spectral flight");
 		}
 
 		public override void SetDefaults() {

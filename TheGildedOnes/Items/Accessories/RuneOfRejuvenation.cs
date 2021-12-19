@@ -8,7 +8,7 @@ namespace TheGildedOnes.Items.Accessories
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Rune Of Rejuvenation");
-			Tooltip.SetDefault("Doubles your maximum HP");
+			Tooltip.SetDefault("Grants increased life regen and +20 max HP");
 		}
 
 		public override void SetDefaults() {

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace TheGildedOnes.Items.Accessories
 {
-	public class RuneOfRejuvenation : ModItem
+	public class RuneOfDexterity : ModItem
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Rune Of Rejuvenation");
