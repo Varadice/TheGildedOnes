@@ -1,0 +1,3 @@
+author = Varadice
+version = 0.1
+displayName = The Gilded Ones
