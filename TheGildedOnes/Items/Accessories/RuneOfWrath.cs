@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
 
 namespace TheGildedOnes.Items.Accessories
 {
@@ -39,7 +40,7 @@ namespace TheGildedOnes.Items.Accessories
 		
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Rune Of Wrath");
-			Tooltip.SetDefault("All attacks burn enemies, but power requires sacrifice...");
+			Tooltip.SetDefault("All attacks burn enemies and you are guarded by holy light, but power requires sacrifice...");
 		}
 
 		public override void SetDefaults() {
@@ -64,6 +65,7 @@ namespace TheGildedOnes.Items.Accessories
 			Dust.NewDust(player.Center, 1, 1, DustID.BlueFairy, SpeedX, SpeedY, 0, newColor, 1f);
 			Dust.NewDust(player.Center, 1, 1, DustID.PinkFairy, SpeedX, SpeedY, 0, newColor, 1f);
 			player.GetModPlayer<Wrath>().Wrathed = true;
+			player.AddBuff(BuffID.Shine, 60, false);
 		}
 		
 	}

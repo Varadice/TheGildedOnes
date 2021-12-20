@@ -24,15 +24,18 @@ namespace TheGildedOnes.Items.Accessories
 			player.statDefense = player.statDefense + 5;
 			if (TheGildedOnes.ArmorAbilityHotKey.JustPressed)
 			{
-				player.AddBuff(BuffID.Battle, 120, false);
-				player.AddBuff(BuffID.Endurance, 120, false);
-				PowerIsActive = true;
+				while (!player.HasBuff(ModContent.BuffType<Buffs.CoolDownDebuff>()))
+				{
+					player.AddBuff(BuffID.Battle, 400, false);
+					player.AddBuff(BuffID.Endurance, 400, false);
+					PowerIsActive = true;
+				}
 				
 			}
 			if(PowerIsActive == true && player.HasBuff(BuffID.Battle) || PowerIsActive == true && player.HasBuff(BuffID.Battle))
             {
-
-            }
+				player.AddBuff(ModContent.BuffType<Buffs.CoolDownDebuff>(), 800);
+			}
 		}
 	}
 }

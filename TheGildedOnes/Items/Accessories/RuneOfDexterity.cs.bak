@@ -34,13 +34,13 @@ namespace TheGildedOnes.Items.Accessories
             Color newColor = default;
             //this just prints out the timer 
             //this only happens if you have the space bar pressed down and the timer is less than 100
-            if (player.controlJump && ++timer <= 100)
+            if (player.controlJump && ++timer <= 50)
             {
                 //this sets the player velocity so its like "flying" and a cool particle under the players feet
-                player.velocity.Y = 100f * player.direction;
-                player.velocity.X = 10f * player.direction;
+                player.velocity.Y = 80f * player.direction;
+                player.velocity.X = 7f * player.direction;
                 player.jump = 45;
-                Dust.NewDust(player.BottomLeft, 1, 1, DustID.BlueFairy ,SpeedX, SpeedY, 0, newColor, 2f);
+                Dust.NewDust(player.BottomLeft , 1, 1, DustID.BlueFairy ,SpeedX, SpeedY, 0, newColor, 2f);
 				
                 
             }
