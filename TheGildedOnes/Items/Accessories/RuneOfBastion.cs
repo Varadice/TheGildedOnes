@@ -6,9 +6,11 @@ namespace TheGildedOnes.Items.Accessories
 {
 	public class RuneOfBastion : ModItem
 	{
+		
+		
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Rune Of Bastion");
-			Tooltip.SetDefault("Grants a great power, but there are some who are out for what is yours...");
+			Tooltip.SetDefault("Turns you near indestructable, but there are some who are out for what is yours...");
 		}
 		
 		public override void SetDefaults() {
@@ -20,9 +22,10 @@ namespace TheGildedOnes.Items.Accessories
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.statDefense = player.statDefense + 5;
-			player.AddBuff(BuffID.Battle, 60, false);
-			player.AddBuff(BuffID.Endurance, 60, false);
+			player.statDefense = player.statDefense + 8;
+			player.AddBuff(BuffID.Slow, 60, false);
+			player.AddBuff(BuffID.WellFed, 60, false);
+			player.AddBuff(BuffID.Thorns, 60, false);
 		}
 	}
 }
