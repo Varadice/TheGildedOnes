@@ -32,7 +32,6 @@ namespace TheGildedOnes.Items.Accessories
             float SpeedX = 5;
             float SpeedY = 5;
             Color newColor = default;
-            //this just prints out the timer 
             //this only happens if you have the space bar pressed down and the timer is less than 100
             if (player.controlJump && ++timer <= 100)
             {

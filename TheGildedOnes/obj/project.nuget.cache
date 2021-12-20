@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jnk5BWC40+kPfT68+C9Dv0ZvXHRSygy9mPLlIyseNKuJJnfzEjemvagFUIrsBIhAg47YGrREhkShIbG1ZlxpLQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Cameren\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\TheGildedOnes\\TheGildedOnes.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Cameren\\.nuget\\packages\\tmodloader.codeassist\\0.1.3\\tmodloader.codeassist.0.1.3.nupkg.sha512"
+  ],
+  "logs": []
+}

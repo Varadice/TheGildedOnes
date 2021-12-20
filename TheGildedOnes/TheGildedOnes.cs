@@ -6,7 +6,8 @@ namespace TheGildedOnes
 {
 	class TheGildedOnes : Mod
 	{
-		public TheGildedOnes()
+        internal static ModHotKey ArmorAbilityHotKey;
+        public TheGildedOnes()
 		{
 			
 			Properties = new ModProperties()
@@ -15,6 +16,12 @@ namespace TheGildedOnes
                 AutoloadGores = true,
                 AutoloadSounds = true
             };
-		}	
-	}
+		
+			
+		}
+        public override void Load()
+        {
+            ArmorAbilityHotKey = RegisterHotKey("Armor Ability", "Z");
+        }
+    }
 }

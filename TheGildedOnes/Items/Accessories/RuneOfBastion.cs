@@ -6,6 +6,7 @@ namespace TheGildedOnes.Items.Accessories
 {
 	public class RuneOfBastion : ModItem
 	{
+		bool PowerIsActive;
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Rune Of Bastion");
 			Tooltip.SetDefault("Grants a great power, but there are some who are out for what is yours...");
@@ -21,8 +22,17 @@ namespace TheGildedOnes.Items.Accessories
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.statDefense = player.statDefense + 5;
-			player.AddBuff(BuffID.Battle, 60, false);
-			player.AddBuff(BuffID.Endurance, 60, false);
+			if (TheGildedOnes.ArmorAbilityHotKey.JustPressed)
+			{
+				player.AddBuff(BuffID.Battle, 120, false);
+				player.AddBuff(BuffID.Endurance, 120, false);
+				PowerIsActive = true;
+				
+			}
+			if(PowerIsActive == true && player.HasBuff(BuffID.Battle) || PowerIsActive == true && player.HasBuff(BuffID.Battle))
+            {
+
+            }
 		}
 	}
 }
