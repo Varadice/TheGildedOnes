@@ -8,9 +8,9 @@ namespace TheGildedOnes.Items.Accessories
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Rune Of Bastion");
-			Tooltip.SetDefault("Grants 5 extra defense.");
+			Tooltip.SetDefault("Grants a great power, but there are some who are out for what is yours...");
 		}
-
+		
 		public override void SetDefaults() {
 			item.width = 28; 
 			item.height = 24;
@@ -21,6 +21,8 @@ namespace TheGildedOnes.Items.Accessories
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.statDefense = player.statDefense + 5;
+			player.AddBuff(BuffID.Battle, 60, false);
+			player.AddBuff(BuffID.Endurance, 60, false);
 		}
 	}
 }

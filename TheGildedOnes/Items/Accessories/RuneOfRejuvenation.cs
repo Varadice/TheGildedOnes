@@ -8,7 +8,7 @@ namespace TheGildedOnes.Items.Accessories
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Rune Of Rejuvenation");
-			Tooltip.SetDefault("Grants increased life regen and +20 max HP");
+			Tooltip.SetDefault("Grants increased life regen but sometimes, you need to have less to get more...");
 		}
 
 		public override void SetDefaults() {
@@ -20,8 +20,8 @@ namespace TheGildedOnes.Items.Accessories
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.statLifeMax2 = player.statLifeMax2 + 20;
-			player.lifeRegen = player.lifeRegen + 2;
+			player.statLifeMax2 = player.statLifeMax2 - 20;
+			player.lifeRegen = player.lifeRegen + 3;
 		}
 	}
 }

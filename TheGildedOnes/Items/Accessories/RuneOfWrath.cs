@@ -6,9 +6,37 @@ namespace TheGildedOnes.Items.Accessories
 {
 	public class RuneOfWrath : ModItem
 	{
+		public class Wrath : ModPlayer
+		{
+			public bool Wrathed;
+			public override void ResetEffects() 
+			{
+				Wrathed = false;
+			}
+			public override void OnHitNPC(Item item, NPC target, int damage, float knockback, bool crit) 
+			{
+				if (Wrathed)
+				{
+					target.AddBuff(BuffID.Frostburn, 60, false);
+					target.AddBuff(BuffID.OnFire, 60, false);
+					player.AddBuff(BuffID.OnFire, 300, false);
+				}
+			}
+			public override void OnHitNPCWithProj(Projectile proj, NPC target, int damage, float knockback, bool crit) 
+			{
+				if (Wrathed)
+				{
+					target.AddBuff(BuffID.Frostburn, 60, false);
+					target.AddBuff(BuffID.OnFire, 60, false);
+					player.AddBuff(BuffID.OnFire, 300, false);
+				}
+			}
+
+		}
+		
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Rune Of Wrath");
-			Tooltip.SetDefault("Grants +8% more damage and all attacks burn enemies");
+			Tooltip.SetDefault("All attacks burn enemies, but power requires sacrifice...");
 		}
 
 		public override void SetDefaults() {
@@ -20,8 +48,8 @@ namespace TheGildedOnes.Items.Accessories
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.statLifeMax2 = player.statLifeMax2 + 20;
-			player.lifeRegen = player.lifeRegen + 2;
+			player.GetModPlayer<Wrath>().Wrathed = true;
 		}
+		
 	}
 }
