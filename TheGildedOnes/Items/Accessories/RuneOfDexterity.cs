@@ -29,16 +29,15 @@ namespace TheGildedOnes.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             //dont worry about this
-            float SpeedX = 0;
-            float SpeedY = 0;
+            float SpeedX = 5;
+            float SpeedY = 5;
             Color newColor = default;
-            //this just prints out the timer 
             //this only happens if you have the space bar pressed down and the timer is less than 100
-            if (player.controlJump && ++timer <= 50)
+            if (player.controlJump && ++timer <= 100)
             {
                 //this sets the player velocity so its like "flying" and a cool particle under the players feet
-
-                player.velocity.X = 7f * player.direction;
+                player.velocity.Y = 100f * player.direction;
+                player.velocity.X = 10f * player.direction;
                 player.jump = 45;
                 Dust.NewDust(player.BottomLeft , 1, 1, DustID.BlueFairy ,SpeedX, SpeedY, 0, newColor, 2f);
 				

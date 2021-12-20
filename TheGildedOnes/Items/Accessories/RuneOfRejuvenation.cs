@@ -21,7 +21,7 @@ namespace TheGildedOnes.Items.Accessories
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			player.statLifeMax2 = player.statLifeMax2 - 20;
-			player.lifeRegen = player.lifeRegen + 5;
+			player.lifeRegen = player.lifeRegen + 3;
 		}
 	}
 }
