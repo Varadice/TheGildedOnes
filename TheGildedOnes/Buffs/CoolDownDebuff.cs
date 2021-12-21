@@ -8,13 +8,15 @@ namespace TheGildedOnes.Buffs
     {
         public override void SetDefaults()
         {
+            // name and description
             DisplayName.SetDefault("Tired");
             Description.SetDefault("Cannot use again for 40 seconds");
-            Main.debuff[Type] = true;
+            // makes sure nurse cannot take the buff off
+            Main.debuff[Type] = false;
         }
-        public override void Update(NPC npc, ref int buffIndex)
+        public override void Update(Player player, ref int buffIndex)
         {
-            
+          
         }
 
     }
