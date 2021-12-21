@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using TheGildedOnes.Buffs;
 
 namespace TheGildedOnes.Items.Accessories
 {
@@ -21,20 +22,20 @@ namespace TheGildedOnes.Items.Accessories
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.statDefense = player.statDefense + 5;
-			if (TheGildedOnes.ArmorAbilityHotKey.JustPressed)
+			//increase defence
+			player.statDefense = player.statDefense + 8;
+
+			//check if player has pressed the hotkey binded in the game and if the player doesnt have the cooldown debuff
+			if (TheGildedOnes.BastAbilityHotKey.JustPressed && !player.HasBuff(ModContent.BuffType<CoolDownDebuff>()))
 			{
-				while (!player.HasBuff(ModContent.BuffType<Buffs.CoolDownDebuff>()))
-				{
-					player.AddBuff(BuffID.Battle, 400, false);
-					player.AddBuff(BuffID.Endurance, 400, false);
-					PowerIsActive = true;
-				}
-				
+				//adds the Bast buff for 20 seconds
+				player.AddBuff(ModContent.BuffType<BastBuff>(), 1250);
 			}
-			if(PowerIsActive == true && player.HasBuff(BuffID.Battle) || PowerIsActive == true && player.HasBuff(BuffID.Battle))
+			//check if player has the bast buff
+			if(player.HasBuff(ModContent.BuffType<BastBuff>()))
             {
-				player.AddBuff(ModContent.BuffType<Buffs.CoolDownDebuff>(), 800);
+				//gives the player a 40 second cooldown debuff
+				player.AddBuff(ModContent.BuffType<CoolDownDebuff>(), 2450);
 			}
 		}
 	}

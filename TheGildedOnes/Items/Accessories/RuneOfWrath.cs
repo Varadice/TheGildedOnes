@@ -60,7 +60,8 @@ namespace TheGildedOnes.Items.Accessories
 			float SpeedY = 0;
           
 			Color newColor = default;
-			
+
+             // as long as the accessory is equipt the player emits blue and pink sparkles
 			Dust.NewDust(player.Center, 1, 1, DustID.BlueFairy, SpeedX, SpeedY, 0, newColor, 1f);
 			Dust.NewDust(player.Center, 1, 1, DustID.PinkFairy, SpeedX, SpeedY, 0, newColor, 1f);
 			player.GetModPlayer<Wrath>().Wrathed = true;

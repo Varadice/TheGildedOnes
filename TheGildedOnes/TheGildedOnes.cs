@@ -6,7 +6,8 @@ namespace TheGildedOnes
 {
 	class TheGildedOnes : Mod
 	{
-        internal static ModHotKey ArmorAbilityHotKey;
+        // for the hotkey
+        internal static ModHotKey BastAbilityHotKey;
         public TheGildedOnes()
 		{
 			
@@ -21,7 +22,8 @@ namespace TheGildedOnes
 		}
         public override void Load()
         {
-            ArmorAbilityHotKey = RegisterHotKey("Armor Ability", "Z");
+            //sets the hotkey as Z default
+            BastAbilityHotKey = RegisterHotKey("Armor Ability", "Z");
         }
     }
 }
